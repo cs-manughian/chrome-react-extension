@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { DOMMessage, DOMMessageResponse } from './types';
 
 function App() {
   const [headlines, setHeadlines] = React.useState<string[]>([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     /**
      * We can't use "chrome.runtime.sendMessage" for sending messages from React.
      * For sending messages from React we need to specify which tab to send it to.
      */
-    chrome.tabs && chrome.tabs.query({
+    if (!chrome.tabs) return;
+    
+    chrome.tabs.query({
       active: true,
       currentWindow: true
     }, tabs => {
@@ -27,8 +29,9 @@ function App() {
         (response: DOMMessageResponse) => {
           setHeadlines(response.headlines);
         });
-    });
-  });
+    },);
+
+  }, []);
 
   return (
     <div className='app'>
