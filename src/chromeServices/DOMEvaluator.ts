@@ -4,7 +4,6 @@ const messagesFromReactAppListener = (msg: DOMMessage, sender: chrome.runtime.Me
   console.log('[content.js]. Message received', msg);
 
   const response: DOMMessageResponse = {
-    title: document.title,
     headlines: Array.from(document.getElementsByTagName<"h1">("h1")).map(h1 => h1.innerText)
   };
 

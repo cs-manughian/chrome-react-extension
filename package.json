@@ -1,5 +1,5 @@
 {
-  "name": "chrome-react-seo-extension",
+  "name": "chrome-react-extension",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,6 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "INLINE_RUNTIME_CHUNK=false craco build",
+    "build-windows": "set INLINE_RUNTIME_CHUNK=false&&craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

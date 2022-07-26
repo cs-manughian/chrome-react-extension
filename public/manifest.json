@@ -1,6 +1,6 @@
 {
-  "name": "Chrome React SEO Extension",
-  "description": "The power of React and TypeScript for building interactive Chrome extensions",
+  "name": "Chrome React Extension",
+  "description": "Interactive Chrome Extensions with React and TypeScript",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
@@ -17,8 +17,8 @@
     "activeTab"
   ],
   "icons": {
-    "16": "logo192.png",
-    "48": "logo192.png",
-    "128": "logo192.png"
+    "16": "favicon_io/favicon-16x16.png",
+    "48": "favicon_io/android-chrome-192x192.png",
+    "128": "favicon_io/android-chrome-192x192.png"
   }
 }
